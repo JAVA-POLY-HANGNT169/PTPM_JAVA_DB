@@ -45,6 +45,19 @@ COLLATE=utf8mb4_0900_ai_ci;
 ALTER TABLE PTPM_JAVA.sinh_vien ADD lop_id BIGINT NULL;
 ALTER TABLE PTPM_JAVA.sinh_vien ADD CONSTRAINT sinh_vien_FK_1 FOREIGN KEY (lop_id) REFERENCES PTPM_JAVA.lop(id);
 
+CREATE TABLE PTPM_JAVA.`user` (
+	id BIGINT auto_increment NOT NULL,
+	username varchar(100) NULL,
+	password varchar(100) NULL,
+	CONSTRAINT user_PK PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO PTPM_JAVA.`user`
+(id, username, password)
+VALUES(1, 'HangNT169', '$2a$12$sBdXyANxfSVr70Qkbj7ot.lOdvR5A2szJ01yPoqNCh.2ffV5o1Ag.');
 
 INSERT INTO PTPM_JAVA.lop
 (id, ma_lop, ten_lop, so_luong_sv)
